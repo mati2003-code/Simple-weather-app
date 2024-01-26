@@ -23,7 +23,7 @@ getWeather(select.value).then(data => {
     const addData = dataValue => {
         if(select.value != '') {
             const tr = document.createElement('tr');
-            let pressure = dataValue.cisnienie != null ? `${dataValue.cisnienie} hPa` :  'Dane niedostępne.';
+            let pressure = dataValue.cisnienie != null ? `${dataValue.cisnienie} hPa` : 'Dane niedostępne.';
             tr.innerHTML = `
                 <td>${dataValue.stacja}</td>
                 <td>${dataValue.data_pomiaru}</td>
@@ -40,5 +40,5 @@ getWeather(select.value).then(data => {
     select.addEventListener('change', () => {
         addData(data[select.value]);
     });
-})
+});
 
