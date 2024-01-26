@@ -2,7 +2,6 @@
 const baseUr = 'https://danepubliczne.imgw.pl/api/data/synop/station/'
 const select = document.querySelector('select');
 
-
 const getWeather = async city => {
     try {        
         const response = await fetch(`${baseUr}${city}`);
@@ -21,7 +20,7 @@ getWeather(select.value).then(data => {
 
         select.appendChild(option);
     });
-    const addData = (dataValue) => {
+    const addData = dataValue => {
         if(select.value != '') {
             const tr = document.createElement('tr');
             let pressure = dataValue.cisnienie != null ? `${dataValue.cisnienie} hPa` :  'Dane niedostępne.';
